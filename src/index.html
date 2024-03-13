@@ -1,0 +1,1099 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./tailwind.css" rel="stylesheet" />
+    <title>Oli'Oli Soireés & Rentals</title>
+
+    <!-- ALPINE -->
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"
+    ></script>
+
+     <!-- GOOGLE FONTS Gallada -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+
+    <!-- GOOGLE FONTS Montserrat -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  </head>
+  <body
+    style="
+      font-family:
+        Montserrat,
+        sans-serif;
+    "
+  >
+    <header>
+      <!-- FIXED NAV -->
+
+      <nav
+        class="hidden md:flex flex-row justify-between items-center text-sm bg-white px-4 md:px-2 lg:px-4 py-1 fixed z-50 w-full gap-2 lg:gap-4 shadow-md"
+      >
+        <div class="h-16">
+          <img
+            src="./img/logos/logo-full.png"
+            alt="Logo"
+            class="object-contain w-full h-full"
+          />
+        </div>
+        <div class="flex flex-row grow justify-center max-w-[1000px]">
+          <div
+            class="flex flex-row grow justify-center font-normal text-center text-navGray items-center lg:text-base"
+          >
+            <a
+              href="#hero"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Inicio
+            </a> 
+            <a
+              href="#products"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Nuestro trabajo
+            </a>
+            <a
+              href="#about"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Sobre nosotros
+            </a>
+            <a
+              href="#reviews"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Reseñas
+            </a>
+            <a
+              href="#contacto"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Contacto
+            </a>
+            <a
+              href="#sucursales"
+              class="cursor-pointer py-1 px-2 hover:text-primary hover:underline hover:underline-offset-4 hover:decoration-2 transition-all ease-in leading-6"
+            >
+              Ubicación
+            </a>
+          </div>
+        </div>
+        <div class="min-w-[140px]">
+          <button
+            type="button"
+            class="cursor-pointer lg:min-w-[170px] text-white py-2 px-4 text-lg flex gap-2 items-center sm:text-xs lg:text-base w-full transition-all ease-in hover:bg-secondary focus:ring-4 focus:bg-primary focus:ring-primary/50 active:ring-4 active:ring-secondary/50 active:bg-secondary disabled:bg-opacity-50 bg-primary rounded-full"
+          >
+            <div class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <span class="text-nowrap font-semibold">(787) 694-0023</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- MOBILE NAV -->
+
+      <nav
+        x-data="{ open: false }"
+        class="md:hidden fixed flex-row justify-between items-center text-sm bg-white z-50 w-full shadow-md top-0 flex px-4 py-1"
+      >
+        <div class="flex flex-row items-center justify-between text-sm w-full">
+          <div class="h-16">
+            <img
+              src="./img/logos/logo-full.png"
+              class="object-contain h-full w-full"
+              alt="Logo ícono"
+            />
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2">
+              <button
+                id="call-icon"
+                class="text-lg text-white  py-1 px-4 cursor-pointer transition-all ease-in hover:bg-secondary focus:ring-4 focus:bg-primary focus:ring-primary/50 active:ring-4 active:ring-secondary/50 active:bg-secondary disabled:bg-opacity-50 bg-primary rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                id="bars"
+                x-on:click="open = ! open"
+                class="text-lg text-primary cursor-pointer transition-all ease-in p-1 hover:text-secondary focus:ring-2 focus:ring-primary focus:text-primary active:ring-2 active:ring-secondary active:text-secondary disabled:opacity-50 rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              x-show="open"
+              id="menu"
+              class="flex flex-col grow justify-center absolute top-[70px] right-[0] shadow-lg"
+            >
+              <div
+                class="flex flex-col grow justify-evenly font-medium text-darkGray text-center divide-y z-20 bg-white"
+              >
+                <a
+                  href="#hero"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Inicio
+                </a>
+                <a
+                  href="#products"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Nuestro trabajo
+                </a>
+                <a
+                  href="#about"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Sobre nosotros
+                </a>                              
+                <a
+                  href="#reviews"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Reseñas
+                </a>
+                <a
+                  href="#contacto"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Contacto
+                </a>
+                <a
+                  href="#sucursales"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Ubicación
+                </a>
+                <a
+                  href="#horarios"
+                  class="flex py-3 px-6 justify-center items-center self-stretch hover:bg-primary transition-all ease-in hover:bg-opacity-50"
+                >
+                  Horarios
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- BANNER PROMOCIONAL -->
+
+      <section>
+        <div
+          class="w-full bg-sixth text-white text-sm sm-banner flex justify-between items-center p-4 absolute top-[70px] z-30 bg-neutralGray"
+        >
+          <div class="text-white h-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <p class="text-center">Up to <strong>70% OFF</strong></p>
+          <div class="text-white h-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section
+        id="hero"
+        class="text-center flex flex-col md:flex-row items-center justify-center h-[650px] md:h-[600px] mt-[100px] md:mt-0 bg-hero-mobile bg-center bg-cover bg-no-repeat"
+      >
+        <div
+          class="hidden md:flex h-1/2 w-full md:h-full md:w-1/2 justify-center items-center pt-0 md:pt-[100px] max-h-[470px] md:max-h-full"
+        >
+          <img
+            src="./img/banner-desktop.png"
+            alt="Girl with glasses"
+            class="object-cover h-full w-full"
+          />
+        </div>
+        <div
+          class="flex justify-center items-end w-full h-full bg-gradient-to-t from-black to-60% md:bg-white md:w-1/2 md:to-0% md:pt-[100px]"
+        >
+          <div
+            class="flex flex-col justify-center items-center w-[90%] md:h-full gap-8 text-white py-10 md:p-0"
+          >
+            <div class="w-full flex flex-col items-center gap-2">
+              <h1 style="font-family: Galada, cursive;"
+                class="w-full text-[40px] md:text-5xl leading-12 md:text-center md:text-primary"
+              >
+              We create. <span class="md:text-secondary">You celebrate.</span>
+              </h1>
+              <p style="font-family: Galada, cursive;" class="md:text-primary text-[32px] md:text-[40px]">We rent. <span class="md:text-secondary">You create.</span></p>
+            </div>
+            <div class="w-full flex flex-col items-center">
+              <div
+                class="flex flex-row items-center justify-center w-[90%] max-w-[342px]"
+              >
+                <button
+                  type="submit"
+                  class="bg-primary text-white py-2 px-4 font-semibold text-lg flex gap-2 items-center justify-center w-full transition-all ease-in hover:bg-primary/50 focus:ring-4 focus:bg-primary focus:ring-primary/50 active:bg-opacity-0 active:ring-4 active:ring-primary/50 disabled:bg-opacity-50 rounded-full"
+                >
+                  Contáctanos
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTOS -->
+      <section id="products" class="flex items-center py-16 flex-col bg-primary">
+        <div class="w-[90%] md:w-full flex flex-col items-center gap-8">
+          <h2 style="font-family: Galada, cursive;"
+            class="text-center text-4xl md:text-5xl text-white"
+          >
+            Nuestro trabajo
+          </h2>
+
+          <!-- CARDS  -->
+
+          <div class="w-full">
+            <div
+              id="slideshow-container"
+              class="flex flex-col flex-wrap md:flex-row justify-center gap-8"
+            >
+              <!-- CARD 01 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA01s.png"
+                      alt="Frida Kahlo Eyewear"
+                      class="object-contain w-full"
+                    />
+                  </div>                  
+                </div>
+              </div>
+
+              <!-- CARD 02 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA02s.png"
+                      alt="Nike Prescription Eyewear"
+                      class="object-contain w-full justify-self-start"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 03 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA03s.png"
+                      alt="Ray Ban"
+                      class="object-contain w-full justify-self-start"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 04 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA04s.png"
+                      alt="Ray Ban"
+                      class="object-contain w-full justify-self-start"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 05 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA05s.png"
+                      alt="Ray Ban"
+                      class="object-contain w-full justify-self-start"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 06 -->
+
+              <div class="md:w-[30%] w-full md:min-w-[350px]">
+                <div class="w-full flex flex-col bg-white">
+                  <div class="">
+                    <img
+                      src="./img/products/AA06s.png"
+                      alt="Ray Ban"
+                      class="object-contain w-full justify-self-start"
+                    />
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      <!-- SOBRE NOSOTROS -->
+      <section id="about" class="bg-white">
+        <div class="flex flex-col items-center justify-center">
+          <div
+            class="flex flex-row justify-center py-12 md:py-16 w-10/12 max-w-[800px] md:gap-8"
+          >
+            <div class="flex flex-col items-center justify-center w-[90%]">
+              <div class="flex flex-col justify-center items-center h-64 md:h-80 mb-8">
+                <img
+                  src="./img/logos/logo-full-v.png"
+                  alt="Logo"
+                  class="object-contain h-full"
+                />
+              </div>
+              <div class="flex flex-col gap-4">
+                <div
+                  class="text-neutralGray flex flex-col gap-4 items-center text-center"
+                >
+                  <p>
+                    En Oli'Oli Soireés & Rentals, creemos que cada evento especial merece ser memorable y único. 
+                  </p>
+                  <p>
+                    Nuestro equipo está formado por profesionales apasionados que se dedican a hacer realidad tus sueños y convertir tu evento en una experiencia inolvidable.
+                  </p>
+                  <p>
+                    Permítenos ser parte de tu próxima celebración y crear juntos momentos inolvidables.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+          
+      
+      <!-- TESTIMONIOS -->
+      <section
+        id="reviews"
+        class="flex items-center py-16 flex-col bg-secondary"
+      >
+        <div
+          class="w-[90%] lg:w-full flex flex-col items-center max-w-[1200px] gap-8"
+        >
+          <h2 style="font-family: Galada, cursive;" class="text-center text-4xl md:text-5xl text-white">
+            Lo que piensan nuestros clientes
+          </h2>
+
+          <div
+            class="flex flex-col md:flex-row gap-8 flex-wrap justify-evenly w-full"
+          >
+            <!-- CARD 01 -->
+            <div class="flex flex-row gap-4 items-centers justify-center h-min">
+              <div
+                class="w-full md:max-w-[350px] min-w-[340px] flex flex-col items-center gap-4 p-6 bg-white rounded-2xl shadow-xl"
+              >
+                <div class="h-32 hidden">
+                  <img
+                    src="img/review/RR01s.png"
+                    alt="María S."
+                    class="object-cover w-full h-full"
+                  />
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                  <p class="text-gray-500">
+                    <strong>"</strong>¡Increíble! Gracias a Oli'Oli Soireés & Rentals, la fiesta de cumpleaños de mi hija fue un sueño hecho realidad. La decoración era perfecta, y el equipo fue muy atento y profesional. ¡Definitivamente los recomendaría para cualquier evento!<strong>"</strong>
+                  </p>
+                  <h4 class="font-semibold">María S.</h4>
+                  <div>
+                    <img src="img/icons/facebook-bl.png" alt="Facebook logo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 02 -->
+            <div class="flex flex-row gap-4 items-centers justify-center h-min">
+              <div
+                class="w-full md:max-w-[350px] min-w-[340px] flex flex-col items-center gap-4 p-6 bg-white rounded-2xl shadow-xl"
+              >
+                <div class="h-32 hidden">
+                  <img
+                    src="img/review/RR02s.png"
+                    alt="Javier M."
+                    class="object-cover w-full h-full"
+                  />
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                  <p class="text-gray-500">
+                    <strong>"</strong>Estoy muy agradecido con Oli'Oli Soireés & Rentals por hacer que el baby shower de mi esposa fuera tan especial. La decoración era hermosa, y el servicio fue impecable. ¡Gracias por hacer de este día un recuerdo inolvidable!<strong
+                      >"</strong
+                    >
+                  </p>
+                  <h4 class="font-semibold">Javier M.</h4>
+                  <div>
+                    <img src="img/icons/facebook-bl.png" alt="Facebook logo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 03 -->
+            <div class="flex flex-row gap-4 items-centers justify-center h-min">
+              <div
+                class="w-full md:max-w-[350px] min-w-[340px] flex flex-col items-center gap-4 p-6 bg-white rounded-2xl shadow-xl"
+              >
+                <div class="h-32 hidden">
+                  <img
+                    src="img/review/RR03s.png"
+                    alt="Michael R."
+                    class="object-cover w-full h-full"
+                  />
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                  <p class="text-gray-500">
+                    <strong>"</strong>¡La mejor decisión que tomé para la fiesta temática de mi hijo! Oli'Oli Soireés & Rentals hizo un trabajo increíble con la decoración y la planificación. Todos los invitados quedaron impresionados. ¡Gracias por todo su esfuerzo y dedicación!<strong
+                      >"</strong
+                    >
+                  </p>
+                  <h4 class="font-semibold">Luisa R.</h4>
+                  <div>
+                    <img src="img/icons/facebook-bl.png" alt="Facebook logo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+
+      <section id="contacto" class="flex justify-center bg-neutralGray">
+        <div
+          class="flex flex-col md:flex-row py-20 w-[90%] lg:w-9/12 gap-8 text-white max-w-[1000px]"
+        >
+          <div class="flex flex-col gap-8 md:w-1/2">
+            <h2
+              style="font-family: Galada, cursive"
+              class="text-4xl text-center md:text-5xl md:text-left"
+            >
+            ¡Contáctanos y haz que tu próximo evento sea inolvidable!
+            </h2>
+            <div class="font-semibold md:inline-block" hidden>
+              <div class="flex items-center mb-7">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    />
+                  </svg>
+                </div>
+                <p class="ms-4 break-all">olioligroup@gmail.com</p>
+              </div>
+              <div class="flex items-center mb-7">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-y-2 ms-4">
+                  <p>(787) 694-0023</p>
+                </div>
+              </div>
+              <div class="flex items-center mb-7">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex flex-col ms-4 gap-y-4">
+                  <p><strong>Horario de cotizaciones:</strong></p>
+                  <p>Martes a Jueves:  10am - 8pm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:w-1/2 gap-4 w-full">
+            <!-- FORMULARIO -->
+            @include('partials._contact') @antlers {{ form:contact }} {{ if
+            success }}
+            <div class="bg-green-300 text-white p-2">{{ success }}</div>
+            {{ else }} {{ if errors }}
+            <div class="bg-red-300 text-white p-2">
+              {{ errors }} {{ value }}<br />
+              {{ /errors }}
+            </div>
+            {{ /if }}
+
+            <div class="flex flex-col gap-4 text-white">
+              <div class="flex flex-col md:flex-row gap-4 w-full">
+                <div class="md:w-1/2 flex flex-col">
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    minlength="2"
+                    maxlength="32"
+                    pattern="[A-Za-z\s]{1,32}"
+                    title="Nombres"
+                    class="w-full h-12 p-4 text-white focus:outline-none focus:border-lightGray focus:ring-1 focus:ring-lightGray invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 bg-formBg rounded-2xl"
+                    placeholder="Nombres"
+                  />
+                  {{ if errors }}
+                  <span class="inline-block text-white">
+                    Este campo no puede estar vacío, e.g. John
+                  </span>
+                  {{ /if }}
+                </div>
+                <div class="md:w-1/2 flex flex-col">
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    minlength="2"
+                    maxlength="32"
+                    pattern="[A-Za-z]{1,32}"
+                    class="w-full h-12 p-4 text-white focus:outline-none focus:border-lightGray focus:ring-1 focus:ring-lightGray invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 bg-formBg rounded-2xl"
+                    placeholder="Apellidos"
+                  />
+
+                  {{ if errors }}
+                  <span class="inline-block text-white">
+                    Este campo no puede estar vacío, e.g. Doe
+                  </span>
+                  {{ /if }}
+                </div>
+              </div>
+
+              <div class="w-full flex flex-col">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  minlength="4"
+                  class="w-full h-12 p-4 text-white focus:outline-none focus:border-lightGray focus:ring-1 focus:ring-lightGray invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 bg-formBg rounded-2xl"
+                  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                  placeholder="Correo electrónico"
+                />
+
+                {{ if errors }}
+                <span class="inline-block text-white">
+                  Este campo no puede estar vacío, e.g. correo@ejemplo.com
+                </span>
+                {{ /if }}
+              </div>
+
+              <div class="w-full flex flex-col">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  inputmode="numeric"
+                  minlength="9"
+                  maxlength="12"
+                  class="w-full h-12 p-4 text-white focus:outline-none focus:border-lightGray focus:ring-1 focus:ring-lightGray invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 bg-formBg rounded-2xl"
+                  pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                  placeholder="Teléfono"
+                />
+
+                {{ if errors }}
+                <span class="inline-block text-white">
+                  Este campo no puede estar vacío, e.g. 123 456 7890
+                </span>
+                {{ /if }}
+              </div>
+              <div class="w-full flex flex-col">
+                <textarea required
+                  name="note"
+                  id="note"
+                  minlength="10"
+                  class="bg-[F5F5F5] w-full min-h-40 p-4 resize-none text-white focus:outline-none focus:border-lightGray focus:ring-1 focus:ring-lightGray invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 bg-formBg rounded-2xl"
+                  placeholder="Escribe un mensaje"
+                ></textarea>
+                {{ if errors }}
+                <span class="inline-block text-white">
+                  Este campo no puede estar vacío.
+                </span>
+                {{ /if }}
+              </div>
+              <input
+                type="text"
+                class="gloin"
+                name="{{ honeypot ?? 'honeypot' }}"
+              />
+              <div class="transition-opacity hover:opacity-100 hover:ease-in">
+                <button
+                  type="submit"
+                  class="bg-primary text-white py-2 px-4 font-bold flex justify-center items-center md:w-1/2 w-full transition-all ease-in hover:bg-third focus:ring-4 focus:bg-primary focus:ring-primary/50 active:bg-third active:ring-4 active:ring-third/50 disabled:bg-opacity-50 rounded-full"
+                >
+                  Enviar mensaje
+                </button>
+              </div>
+            </div>
+
+            {{ /if }} {{ /form:contact }} @endantlers
+          </div>
+        </div>
+      </section>
+
+      <!-- SUCURSALES -->
+      <section id="sucursales" class="flex justify-center">
+        <div
+          class="w-full md:w-9/12 flex flex-col md:flex-row justify-center py-16 gap-10"
+        >
+          <h2 style="font-family: Galada, cursive;"
+            class="text-darkGray text-4xl text-center md:text-left md:text-5xl py-4 md:hidden"
+          >
+          ¿Tienes dudas?
+          <br>
+          ¡Visítanos!
+          </h2>
+
+          <div class="md:w-1/2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15146.0323309195!2d-66.1109506488066!3d18.369713123114543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0369ce1e4be585%3A0x6db8ab79ec8388a6!2s9%20Ave%20Lopategui%2C%20Guaynabo%2C%2000969%2C%20Puerto%20Rico!5e0!3m2!1sen!2smx!4v1710366570775!5m2!1sen!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div
+            class="md:w-1/2 text-darkGray flex-col justify-center items-left gap-8 hidden md:flex"
+          >
+            <h2 style="font-family: Galada, cursive;"
+              class="text-darkGray text-2xl text-center md:text-left md:text-5xl"
+            >
+            ¿Tienes dudas?
+            <br>
+            ¡Visítanos!
+            </h2>
+            <p class="text-lg font-semibold text-neutralGray">
+              9 Ave Lopategui, Guaynabo, 00969, Puerto Rico
+            </p>
+          </div>
+          <div class="w-full text-lg px-4 md:hidden font-normal text-navGray">
+            <p class="font-bold text-darkGray leading-8 break-all">
+              9 Ave Lopategui, Guaynabo, 00969, Puerto Rico
+            </p>
+            <p>Phone number: (787) 694-0023</p>
+            <p>Email: olioligroup@gmail.com</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- HORARIOS -->
+
+      <section id="horarios" class="bg-white">
+        <div
+          class="flex flex-col items-center text-neutralGray gap-y-4 md:hidden text-lg font-semibold max-w-[1000px] py-16 px-4"
+        >
+          <p class="font-bold text-black text-2xl">Horario de cotizaciones:</p>
+          <p>Monday - Sunday: 10:00am - 6:00pm</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section x-data="" class="flex justify-center bg-mediumGray">
+        <div
+          class="flex flex-col items-center w-[90%] md:w-9/12 py-16 text-white max-w-[1000px]"
+        >
+          <h2 class="font-bold mb-10 text-2xl md:text-4xl">FAQs</h2>
+          <div class="divide-y w-full">
+            <!-- QUESTION 1 -->
+            <div x-data="{ open: false}">
+              <div x-on:click="open = !open" class="flex justify-between py-6">
+                <div class="font-bold">
+                  ¿Qué servicios ofrece Oli'Oli Soireés & Rentals?
+                </div>
+                <button class="text-white text-2xl">
+                  <svg
+                    x-show="!open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div x-show="open" class="pb-4 text-white divide-y">
+                Oli'Oli Soireés & Rentals ofrece servicios de coordinación, planificación y decoración de eventos para niñas, niños y cualquier ocasión especial. Nos especializamos en crear experiencias únicas y memorables para nuestros clientes.
+              </div>
+            </div>
+
+            <!-- QUESTION 2 -->
+            <div x-data="{ open: false}">
+              <div x-on:click="open = !open" class="flex justify-between py-6">
+                <div class="font-bold">
+                  ¿Cómo puedo solicitar los servicios de Oli'Oli Soireés & Rentals?
+                </div>
+                <button class="text-white text-2xl">
+                  <svg
+                    x-show="!open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div x-show="open" class="pb-4 text-white divide-y">
+                Para solicitar nuestros servicios, puedes comunicarte con nosotros a través de nuestro sitio web, por correo electrónico o por teléfono. Nuestro equipo estará encantado de discutir tus necesidades y ayudarte a planificar tu evento.
+              </div>
+            </div>
+
+            <!-- QUESTION 3 -->
+            <div x-data="{ open: false}">
+              <div x-on:click="open = !open" class="flex justify-between py-6">
+                <div class="font-bold">
+                  ¿Qué tipo de eventos atiende Oli'Oli Soireés & Rentals?
+                </div>
+                <button class="text-white text-2xl">
+                  <svg
+                    x-show="!open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div x-show="open" class="pb-4 text-white divide-y">
+                Atendemos una amplia variedad de eventos, incluyendo fiestas de cumpleaños, baby showers, bautizos, comuniones, graduaciones y más. Cualquier ocasión especial que desees celebrar, ¡nosotros estamos aquí para hacerla inolvidable!
+              </div>
+            </div>
+
+            <!-- QUESTION 4 -->
+            <div x-data="{ open: false}">
+              <div x-on:click="open = !open" class="flex justify-between py-6">
+                <div class="font-bold">
+                  ¿Ofrecen servicios de alquiler de decoraciones y mobiliario?
+                </div>
+                <button class="text-white text-2xl">
+                  <svg
+                    x-show="!open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div x-show="open" class="pb-4 text-white divide-y">
+                Sí, ofrecemos servicios de alquiler de decoraciones y mobiliario para eventos. Contamos con una amplia selección de opciones para que puedas crear la atmósfera perfecta para tu evento.
+              </div>
+            </div>
+
+             <!-- QUESTION 5 -->
+             <div x-data="{ open: false}">
+              <div x-on:click="open = !open" class="flex justify-between py-6">
+                <div class="font-bold">
+                  ¿Pueden personalizar la decoración según el tema de mi evento?
+                </div>
+                <button class="text-white text-2xl">
+                  <svg
+                    x-show="!open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div x-show="open" class="pb-4 text-white divide-y">
+                ¡Por supuesto! Nos encanta trabajar en colaboración con nuestros clientes para crear una decoración única y personalizada que se adapte al tema de su evento. Cuéntanos tus ideas y visiones, y nosotros nos encargaremos del resto.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <section
+        class="bg-darkGray flex flex-col justify-center items-center py-16"
+      >
+        <div class="w-[90%] max-w-[1000px]">
+          <div
+            class="w-full flex flex-col md:flex-row md:items-center justify-evenly pb-16"
+          >
+            <div class="flex flex-col items-center gap-6 md:max-w-[255px]">
+              <div
+                class="justify-self-center self-center flex justify-center items-center w-36"
+              >
+                <img
+                  src="img/logos/logo-full-wt.png"
+                  alt="Ícono del logo"
+                  class="object-contain w-full"
+                />                
+              </div>
+              <p class="font-semibold text-white">We create. You celebrate.</p>
+              <div
+                class="text-white opacity-50 text-5xl flex flex-row justify-evenly mb-6 md:mb-0 gap-8"
+              >
+                <a href=""
+                  ><img src="./img/icons/facebook-w.png" alt="Icon facebook"
+                /></a>
+                <a href=""
+                  ><img src="./img/icons/whatsapp-w.png" alt="Icon WhatsApp"
+                /></a>
+                <a href=""
+                  ><img src="./img/icons/instagram-w.png" alt="Icon Instagram"
+                /></a>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-center gap-y-4 mb-4 md:mb-0 text-white"
+            >
+              <h3 class="font-bold">Mapa de sitio</h3>
+              <ul class="grid gap-y-4 underline opacity-60">
+                <li class=""><a href="#hero">Inicio</a></li>                
+                <li><a href="#products">Nuestro trabajo</a></li>
+                <li><a href="#about">Sobre nosotros</a></li>
+              </ul>
+            </div>
+            <div
+              class="text-white opacity-60 flex flex-col justify-center"
+            >
+              <ul class="grid gap-y-4 underline">
+                <br class="hidden md:inline-block" />                
+                <li><a href="#reviews">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#sucursales">Ubicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="opacity-50 w-[90%]" />
+        <span
+          class="sm:text-center text-white opacity-60 pt-8 mb-8 w-[90%] md:w-3/5"
+          >{{ now()->year }}, Oli Oli Soirees LLC., Todos los derechos reservados. Desarrollado por One Park Financial.</span
+        >
+      </section>
+    </footer>
+  </body>
+</html>
